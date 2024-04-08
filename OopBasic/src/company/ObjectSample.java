@@ -4,13 +4,13 @@ public class ObjectSample {
 
     public static void main(String[] args) {
         //インスタンスの作成
-        var department = new Department("営業部","xx", 100000);
-        var employee = new Employee("鈴木", department,"課長", 100);
+        var sales1Department = new Department("営業部","xx", 100000);
+        Employee sales1 = new Sales1("鈴木", sales1Department,"課長", 100);
         
         //インスタンスメソッドの呼び出し
-        employee.report();
-        employee.report(2);
-        employee.joinMeeting();
+        sales1.report();
+        sales1.report(2);
+        sales1.joinMeeting();
         
         //一行空ける
         System.out.println("");
@@ -24,6 +24,9 @@ public class ObjectSample {
         engineer.joinMeeting();
         engineer.developSoftware();
         
+        //一行空ける
+        System.out.println("");
+        
         //ポリモーフィズムの確認
         Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
         
@@ -33,8 +36,18 @@ public class ObjectSample {
         if (projectManager instanceof Engineer) {
             //developSoftwareメソッドを呼び出す
             ((Engineer) projectManager).developSoftware();
-            
         }
+        
+        //一行空ける
+        System.out.println("");
+        
+        //アルバイトインスタンスの作成
+        var parttimeWorker = new ParttimeWorker("太田", sales1Department);
+        
+        ((Workable) sales1).work();
+        ((Workable) engineer).work();
+        ((Workable) projectManager).work();
+        ((Workable) parttimeWorker).work();
     }
 
 }
