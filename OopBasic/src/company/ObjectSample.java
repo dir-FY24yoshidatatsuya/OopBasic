@@ -28,12 +28,12 @@ public class ObjectSample {
         System.out.println("");
         
         //ポリモーフィズムの確認
-        Employee projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
+        Engineer projectManager = new Engineer("佐藤", devDepartment, "PM", 99, "Java");
         
         //インスタンスメソッドの呼び出し
         projectManager.report();
         projectManager.joinMeeting();
-        if (projectManager instanceof Engineer) {
+        if (projectManager instanceof Employee) {
             //developSoftwareメソッドを呼び出す
             ((Engineer) projectManager).developSoftware();
         }

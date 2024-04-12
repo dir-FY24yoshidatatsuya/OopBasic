@@ -14,6 +14,6 @@ public class ParttimeWorker implements Workable{
     //働くメソッドを実装
     @Override
     public void work() {
-        System.out.println("アルバイトとして働きます。名前：" + name + slogan);
+        System.out.println("アルバイトとして働きます。名前：" + name + slogan + department);
     }
 }
